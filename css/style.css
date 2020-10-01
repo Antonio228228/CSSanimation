@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: plum;
+    color: black;
+    text-align: center;
+    font-family: 'Playfair Display', serif;   /*google fonts*/
+    line-height: 1.6;
+}
+
+#showcase {         /*tolko k oblasti*/
+    height: 300px;
+}
+
+#showcase h1 {      /*tolko k zagolovku h1 (header)*/
+    font-size: 3.5rem;
+    line-height: 1.3;
+    position: relative;    /*absolut po umol4aniju snimaet koordinatq i pihaet v ugol, relative ostavlaet na svoem meste no pozvolaet parametri polozhenija*/
+    animation-name: topIn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards; /*fiksatsija teksta v konce animacii*/ 
+
+}
+
+@keyframes topIn {
+    0%{             /*amimacija startuet*/
+        top: -100px;   /*za predelom stranicq*/
+    }
+
+    100%{
+        top: 200px; 
+    }
+}
+
+.container {         /*vertska stranicq vsegda container*/
+    max-width: 960px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+#content {
+    position: relative;
+    animation-name: fromLeft;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fromLeft {
+    0% {
+        left: -1000px;
+    }
+
+    100% {
+        left: 0;
+    }
+    
+}
+
+.btn {
+    display: inline-block;   /*prosto inline nelzja menjat margin i pro4ee*/
+    text-decoration: none;
+    color: white;
+    border: 2px solid;
+    border-color: blueviolet;
+    padding: 1rem; /*prostranstvo vnutri*/
+    margin: 2rem;  /*vqravnivanie po centru stranicq*/
+    opacity: 0; /*prozra4nost*/
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;    /*4tobq ne vozvrashalas v ishodnoe polozhenie*/
+    transition-property: transform; /*kakaja budet transition (transform snizu)*/
+    transition-duration: 3s;
+}
+
+.btn:hover{  /*eto pravilo budet primenjatsa kogda na nego budet naveden kursor*/
+    transform: rotateY(180deg);
+}
+
+@keyframes btn {    /*keyframes eto sama animacija*/
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
